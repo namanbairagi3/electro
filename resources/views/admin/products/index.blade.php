@@ -43,7 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($products as $product)
+                                    @foreach ($products as $product)
                                         <tr>
                                             <td>{{$product->product_id}}</td>
                                             <td>{{$product->product_name}}</td>
@@ -67,9 +67,9 @@
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </form>
-                                            </td>
+                                            </td> 
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

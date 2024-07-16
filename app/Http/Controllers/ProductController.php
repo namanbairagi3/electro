@@ -14,16 +14,27 @@ class ProductController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {   
         //Get the product data from models
-        //1.Querybuilder
-        //2.QueryBuilder
-        //3. factory method
-        $products = Product::all();
-        //dd($products);
-        //Then pass the product to view
-        return view('admin.products.index', ['products'=>$products]);
+        //1. Query Builder
+        //2. Eleqouent
+        //3. Model Factory
+        /*
+        $result = User
+        ::join('contacts', 'users.id', '=', 'contacts.user_id')
+        ->join('orders', 'users.id', '=', 'orders.user_id')
+        ->select('users.id', 'contacts.phone', 'orders.price')
+        ->getQuery() // Optional: downgrade to non-eloquent builder so we don't build invalid User objects.
+        ->get();
+        */
+        $products = Product
+        ::join('brands','products.brand_id','=','brands.id')
+        ->join('units','products.unit_id','=','units.id')
+        ->join('categories','products.category_id','=','categories.category_id')
+        ->select('products.id as product_id', 'products.*', 'brands.*', 'units.*', 'categories.*')
+        ->get();
         
+        return view('admin.products.index',['products'=>$products]);
     }
 
     /**
