@@ -5,19 +5,13 @@
                 <div class="col-sm-6">
                     <h1>Add Brand Form</h1>
                 </div>
-                <!-- <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">General Form</li>
-                    </ol>
-                </div> -->
             </div>
         </div>
     </section>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12"> 
+                <div class="col-md-12">
                     @if (Session::has('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>{{ Session::get('success') }}</strong>
@@ -28,30 +22,29 @@
                         <div class="card-header">
                             <h3 class="card-title">New Brand</h3>
                         </div>
-                        <form method="POST" action="{{route('brands.store')}}"enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('brands.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="brand_name">Brand Name</label>
-                                    <input name="brand_name" value="{{old('brand_name')}}" type="text" class="form-control" id="brand_name"
-                                        placeholder="Enter Brand Name">
+                                    <input name="brand_name" value="{{ old('brand_name') }}" type="text" class="form-control" id="brand_name" placeholder="Enter Brand Name">
                                 </div>
                                 @error('brand_name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                
+
                                 <div class="form-group">
-                                    <label for="exampleInputFile">Logo(w=120 , h=80)</label>
+                                    <label for="brand_logo">Logo (w=120, h=80)</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input name="brand_logo" type="file" class="custom-file-input" id="brand_logo">
+                                            <input name="brand_logo" type="file" class="custom-file-input" id="brand_logo" onchange="previewImage(this)">
                                             <label class="custom-file-label" for="brand_logo">Choose file</label>
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text">Upload</span>
                                         </div>
                                     </div>
-                                    <img id="preview" src="#" alt="your image" />  
+                                    <img id="logo_preview" src="#" alt="Logo Preview" style="display: none; margin-top: 10px; max-width: 120px; max-height: 80px;">
                                 </div>
                                 @error('brand_logo')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -59,8 +52,7 @@
 
                                 <div class="form-group">
                                     <label for="seo_meta_title">SEO - Meta Title</label>
-                                    <input name="seo_meta_title" value="{{old('seo_meta_title')}}" type="text" class="form-control" id="seo_meta_title"
-                                        placeholder="SEO - Meta Title">
+                                    <input name="seo_meta_title" value="{{ old('seo_meta_title') }}" type="text" class="form-control" id="seo_meta_title" placeholder="SEO - Meta Title">
                                 </div>
                                 @error('seo_meta_title')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -68,12 +60,11 @@
 
                                 <div class="form-group">
                                     <label for="seo_meta_desc">SEO - Meta Description</label>
-                                    <textarea name="seo_meta_desc" class="form-control" id="seo_meta_desc" rows="5" cols="">{{old('seo_meta_desc')}}</textarea>
+                                    <textarea name="seo_meta_desc" class="form-control" id="seo_meta_desc" rows="5" cols="">{{ old('seo_meta_desc') }}</textarea>
                                 </div>
                                 @error('seo_meta_desc')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                
                             </div>
 
                             <div class="card-footer">
@@ -85,4 +76,24 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function previewImage(input) {
+            const preview = document.getElementById('logo_preview');
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+                preview.style.display = 'none';
+            }
+        }
+    </script>
 </x-layout>
