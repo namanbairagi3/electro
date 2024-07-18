@@ -13,6 +13,18 @@
   <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+
+  <!-- Custom CSS for background image -->
+  <style>
+    body.login-page {
+      background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20231229/pngtree-computer-themed-circuit-board-vector-background-with-electronic-elements-a-motherboard-image_13888129.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+      
+  </style>
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">

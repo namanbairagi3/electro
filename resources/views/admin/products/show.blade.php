@@ -29,7 +29,7 @@
                             <ul class="list-group">
                                 <li class="list-group-item">{{$product->product_name}}</li>
                                 <li class="list-group-item">{{$product->product_desc}}</li>
-                                <li class="list-group-item">{{ $product->brand->brand_name }}</li>
+                                <li class="list-group-item">{{$product->brand->brand_name}}</li>
                                 <li class="list-group-item"><strong>MRP</strong> - {{$product->mrp}}</li>
                                 <li class="list-group-item"><strong>Sell price</strong> -{{$product->sell_price}}</li>
                                 <li class="list-group-item"><strong>Available Quantity</strong> -{{$product->qty_available}}</li>

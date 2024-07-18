@@ -36,7 +36,7 @@
                                         <th>#Id</th>
                                         <th>Product Name</th>
                                         <th>Description</th>
-                                        <th>Brand</th>
+                                        <th>Brand</th>  
                                         <th>CategoryName</th>
                                         <th>Product Thumbnail</th>
                                         <th>Action</th>
