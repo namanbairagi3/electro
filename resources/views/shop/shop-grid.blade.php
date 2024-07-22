@@ -1,6 +1,7 @@
 @extends('layouts.common')
 
 @section('common_content')
+
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main">
     <!-- breadcrumb -->
@@ -2601,4 +2602,5 @@
     </div>
 </main>
 <!-- ========== END MAIN CONTENT ========== -->
+
 @endsection

@@ -37,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
         $social_google_url = SystemInfo::where('meta_name', 'social_google_url')->first()->meta_value;
         $social_x_url = SystemInfo::where('meta_name', 'social_x_url')->first()->meta_value;
         $social_github_url = SystemInfo::where('meta_name', 'social_github_url')->first()->meta_value;
+        //Support & email
+        $support = SystemInfo::where('meta_name', 'support')->first()->meta_value;
+        $email = SystemInfo::where('meta_name', 'email')->first()->meta_value;
+
 
         $data = [
             'app_name' =>  "$app_name",
@@ -51,7 +55,10 @@ class AppServiceProvider extends ServiceProvider
             'social_fb_url' => "$social_fb_url",
             'social_google_url' => "$social_google_url",
             'social_x_url' => "$social_x_url",
-            'social_github_url' => "$social_github_url"
+            'social_github_url' => "$social_github_url",
+            //Support & email 
+            'support' => "$support",
+            'email' => "$email",
         ];
         //ClassName::method(aa1,aa2);
         View::share('appData', $data);
