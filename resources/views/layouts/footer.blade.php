@@ -248,8 +248,8 @@
                             </div>
                             <div class="col pl-3">
                                 <div class="font-size-13 font-weight-light">Got questions? Call us 24/7!</div>
-                                <a href="tel:+80080018588" class="font-size-20 text-gray-90">{{$appData['customer_care_no1']}}, </a><a
-                                    href="tel:+0600874548" class="font-size-20 text-gray-90">{{$appData['customer_care_no2']}}</a>
+                                <a href="tel:+123456789" class="font-size-20 text-gray-90">{{$appData['customer_care_no1']}}, </a><a
+                                    href="tel:+987654321" class="font-size-20 text-gray-90">{{$appData['customer_care_no2']}}</a>
                             </div>
                         </div>
                     </div>
@@ -263,25 +263,25 @@
                         <ul class="list-inline mb-0 opacity-7">
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                    href="#">
+                                    target="_blank" href="{{$appData['social_fb_url']}}">
                                     <span class="fab fa-facebook-f btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                    href="#">
+                                    target="_blank" href="{{$appData['social_google_url']}}">
                                     <span class="fab fa-google btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                    href="#">
+                                    target="_blank" href="{{$appData['social_x_url']}}">
                                     <span class="fab fa-twitter btn-icon__inner"></span>
                                 </a>
                             </li>
                             <li class="list-inline-item mr-0">
                                 <a class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                                    href="#">
+                                    target="_blank" href="{{$appData['social_github_url']}}">
                                     <span class="fab fa-github btn-icon__inner"></span>
                                 </a>
                             </li>
