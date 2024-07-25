@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
         //
         
         $app_name = SystemInfo::where('meta_name', 'app_name')->first()->meta_value;
+        $app_description = SystemInfo::where('meta_name', 'app_description')->first()->meta_value;
+        $app_shortcut_icon_url = SystemInfo::where('meta_name', 'app_shortcut_icon_url')->first()->meta_value;
         $app_version = SystemInfo::where('meta_name', 'app_version')->first()->meta_value;
         $app_logo = SystemInfo::where('meta_name', 'app_logo')->first()->meta_value;
         //Customer Care
@@ -44,6 +46,8 @@ class AppServiceProvider extends ServiceProvider
 
         $data = [
             'app_name' =>  "$app_name",
+            'app_description' =>  "$app_description",
+            'app_shortcut_icon_url' =>  "$app_shortcut_icon_url",
             'app_version' => "$app_version",
             'app_logo' => "$app_logo",
             //Customer Care

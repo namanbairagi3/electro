@@ -3,14 +3,14 @@
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <!-- Title -->
-        <title>Home-v1 | Electro - Responsive Website Template</title>
+        <title>{{$appData['app_description']}}</title>
 
         <!-- Required Meta Tags Always Come First -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="/favicon.png">
+        <link rel="shortcut icon" href="{{$appData['app_shortcut_icon_url']}}">
 
         <!-- Google Fonts -->
         <link

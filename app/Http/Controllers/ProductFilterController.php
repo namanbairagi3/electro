@@ -7,15 +7,24 @@ use Illuminate\Http\Request;
 
 class ProductFilterController extends Controller
 {
-    //1. Properties
-    //2. Constructor
+    //
+
+
     //3. Method
     public function filter(){
-        $brands = DB::table('brands')
-        ->leftJoin('products', 'brands.id', '=', 'products.brand_id')
-        /* ->select('brands.*', DB::raw('COUNT(products.id) as products_count'))
-        ->groupBy('brands.id') */
+        $products = DB::table('products')
+        ->join('brands', 'products.brand_id', '=', 'brands.id')
+        ->join('categories', 'products.category_id', '=', 'categories.category_id')
         ->get();
-        return view('shop/shop-grid',['brands',$brands]);
+
+        $brandProductCounts = DB::table('products')
+        ->select('brands.brand_name', DB::raw('count(*) as productCount'))
+        ->join('brands', 'products.brand_id', '=', 'brands.id')
+        ->groupBy('brands.brand_name')  // Include brand_name in GROUP BY
+        ->get();
+        return view('shop/shop-grid',[ 
+                                        'brandProductCounts'=>$brandProductCounts,
+                                        'products'=>$products,
+                                     ]);
     }
 }
