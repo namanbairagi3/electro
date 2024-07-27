@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Unit extends Model
 {
     use HasFactory;
-    protected $fillable = ['unit_name', 'unit_desc'];
+    // protected $fillable = ['unit_name', 'unit_desc'];
 
     public function products()
     {

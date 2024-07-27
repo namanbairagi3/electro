@@ -254,7 +254,7 @@
                                                 class="btn btn-block btn-sm btn-primary transition-3d-hover">Get
                                                 Started</button>
                                         </div>
-    
+
                                         <div class="text-center mb-4">
                                             <span class="small text-muted">Already have an account?</span>
                                             <a class="js-animation-link small text-dark" href="javascript:;"
@@ -328,7 +328,7 @@
                                     </div>
                                 </div>
                                 <!-- End Forgot Password -->
-                                
+
                             </div>
                         </div>
                         <!-- End Content -->

@@ -25,7 +25,7 @@ class Product extends Model
                             'prod_main_img'
                           ];
     //2.Constructor
-    
+
     //3.Method
 
     public function brand()

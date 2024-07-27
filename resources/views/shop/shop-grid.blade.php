@@ -1,3 +1,4 @@
+
 @extends('layouts.common')
 
 @section('common_content')
@@ -75,7 +76,7 @@
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="brandAdidas">
                                 <label class="custom-control-label" for="brandAdidas">{{$brandProductCount->brand_name}}
-                                    <span class="text-gray-25 font-size-12 font-weight-normal">({{$brandProductCount->productCount}})</span>
+                                    <span class="text-gray-25 font-size-12 font-weight-normal"> ({{$brandProductCount->productCount}})</span>
                                 </label>
                             </div>
                         </div>

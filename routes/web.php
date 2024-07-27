@@ -24,7 +24,7 @@ Route::get('/', [HomeController::class,'home'])->name('homeroute');
 Route::post('/login',[AuthController::class,'login'])->name('login');
 
 Route::prefix('/shop')->group(function () {
-    Route::get('/shop-grid',[ProductFilterController::class,'filter'])->name('shop-grid');;
+    Route::get('/shop-grid', [ProductFilterController::class, 'filter'])->name('shop-grid');
 
     Route::get('/cart',function(){
         return view('shop/cart');
@@ -70,9 +70,6 @@ Route::prefix('/shop')->group(function () {
     });
     Route::get('/shop-grid-extended',function(){
         return view('shop/shop-grid-extended'); //shop-grid-extended.blade.php
-    });
-    Route::get('/shop-grid',function(){
-        return view('shop/shop-grid'); //shop-grid.blade.php
     });
     Route::get('/shop-left-sidebar',function(){
         return view('shop/shop-left-sidebar'); //shop-left-sidebar.blade.php
