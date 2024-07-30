@@ -11,8 +11,8 @@ class HomeController extends Controller
     //2. Constructor
     //3. Method
     public function home(){
-        $categories = Category::whereNotNull('rank')->orderBy('rank', 'asc')->get();
-        return view('home',['categories'=>$categories]); // return home page view  (admin/home.blade.php)  //
+
+        return view('home'); // return home page view  (admin/home.blade.php)  //
 
     }
 }

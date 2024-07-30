@@ -720,7 +720,7 @@
                                                         </li>
 
                                                         {{-- Creating a loop --}}
-                                                        @foreach ($categories as $category)
+                                                        @foreach ($appData['categories'] as $category)
                                                         <!-- Nav Item MegaMenu -->
                                                         <li class="nav-item hs-has-mega-menu u-header__nav-item"
                                                             data-event="hover"

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\SystemInfo;
@@ -23,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        
+
         $app_name = SystemInfo::where('meta_name', 'app_name')->first()->meta_value;
         $app_description = SystemInfo::where('meta_name', 'app_description')->first()->meta_value;
         $app_shortcut_icon_url = SystemInfo::where('meta_name', 'app_shortcut_icon_url')->first()->meta_value;
@@ -43,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
         $support = SystemInfo::where('meta_name', 'support')->first()->meta_value;
         $email = SystemInfo::where('meta_name', 'email')->first()->meta_value;
 
-
+        $categories = Category::whereNotNull('rank')->orderBy('rank', 'asc')->get();
         $data = [
             'app_name' =>  "$app_name",
             'app_description' =>  "$app_description",
@@ -60,9 +61,10 @@ class AppServiceProvider extends ServiceProvider
             'social_google_url' => "$social_google_url",
             'social_x_url' => "$social_x_url",
             'social_github_url' => "$social_github_url",
-            //Support & email 
+            //Support & email
             'support' => "$support",
             'email' => "$email",
+            'categories'=>$categories
         ];
         //ClassName::method(aa1,aa2);
         View::share('appData', $data);
