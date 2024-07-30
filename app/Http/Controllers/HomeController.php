@@ -13,6 +13,6 @@ class HomeController extends Controller
     public function home(){
         $categories = Category::whereNotNull('rank')->orderBy('rank', 'asc')->get();
         return view('home',['categories'=>$categories]); // return home page view  (admin/home.blade.php)  //
-        
+
     }
 }
