@@ -12,6 +12,7 @@ class ProductFilterController extends Controller
     // Method to filter products
     public function filter(Request $request)
     {
+        // dd($request->all());
         // Check if q parameter is coming in the URL
         if ($request->has('q')) {
             $q = $request->q;

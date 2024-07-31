@@ -101,6 +101,10 @@ Route::prefix('/shop')->group(function () {
     Route::get('/wishlist',function(){
         return view('shop/wishlist'); //wishlist.blade.php
     });
+    //Extra routes
+    Route::get('/chat',function(){
+        return view('shop/chat'); //chat.blade.php
+    });
 });
 
 
