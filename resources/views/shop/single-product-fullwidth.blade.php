@@ -1,5 +1,4 @@
 @extends('layouts.common')
-
 @section('common_content')
 <!-- ========== MAIN CONTENT ========== -->
 <main id="content" role="main">
@@ -48,7 +47,7 @@
                             <img class="img-fluid" src="/assets/img/720X660/img5.jpg" alt="Image Description">
                         </div>
                     </div>
-
+                    {{-- {{$product->prod_gallery_imgs}} --}}
                     <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
                         data-infinite="true"
                         data-slides-show="5"
@@ -74,23 +73,29 @@
                 <div class="col-md-7 mb-md-6 mb-lg-0">
                     <div class="mb-2">
                         <div class="border-bottom mb-3 pb-md-1 pb-3">
-                            <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block">Headphones</a>
-                            <h2 class="font-size-25 text-lh-1dot2">Ultra Wireless S50 Headphones S50 with Bluetooth</h2>
-                            <div class="mb-2">
+                            <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block">{{$product->category_name}}</a>
+                            <h2 class="font-size-25 text-lh-1dot2">{{$product->product_name}}</h2>
+                            {{-- <div class="mb-2">
                                 <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
+                                
                                     <div class="text-warning mr-2">
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="fas fa-star"></small>
-                                        <small class="far fa-star text-muted"></small>
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if ($i <= $averageRating)
+                                                <small class="fas fa-star"></small>
+                                            @else
+                                                <small class="far fa-star text-muted"></small>
+                                            @endif
+                                        @endfor
                                     </div>
-                                    <span class="text-secondary font-size-13">(3 customer reviews)</span>
+                                    {{$averageRating}} &nbsp;
+
+                                    <span class="text-secondary font-size-13">({{$customerReviewCount}} customer reviews)</span>
                                 </a>
-                            </div>
-                            <div class="d-md-flex align-items-center">
-                                <a href="#" class="max-width-150 ml-n2 mb-2 mb-md-0 d-block"><img class="img-fluid" src="/assets/img/200X60/img1.png" alt="Image Description"></a>
-                                <div class="ml-md-3 text-gray-9 font-size-14">Availability: <span class="text-green font-weight-bold">26 in stock</span></div>
+                            </div> --}}
+                            <div class="d-md-flex">
+                                <a href="#" class="max-width-150 ml-n2 mb-2 mb-md-0">Brand:- {{$product->brand_name}} <img class="img-fluid" src="{{$product->brand_logo}}" alt="Image Description"></a>
+                                <a href="#" class="max-width-150 ml-n2 mb-2 mb-md-0">Seller:- {{$product->seller_name}}</a>
+                                <div class="ml-md-3 text-gray-9 font-size-14">Availability: <span class="text-green font-weight-bold">{{$product->qty_available}} in stock</span></div>
                             </div>
                         </div>
                         <div class="flex-horizontal-center flex-wrap mb-4">
@@ -106,11 +111,11 @@
                             </ul>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        <p><strong>SKU</strong>: FW511948218</p>
+                        <p><strong>SKU</strong>: {{$product->sku}}</p>
                         <div class="mb-4">
                             <div class="d-flex align-items-baseline">
-                                <ins class="font-size-36 text-decoration-none">$1,999.00</ins>
-                                <del class="font-size-20 ml-2 text-gray-6">$2,299.00</del>
+                                <ins class="font-size-36 text-decoration-none">${{$product->sell_price}}</ins>
+                                <del class="font-size-20 ml-2 text-gray-6">${{$product->mrp}}</del>
                             </div>
                         </div>
                         <div class="border-top border-bottom py-3 mb-4">

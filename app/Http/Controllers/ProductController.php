@@ -119,7 +119,7 @@ class ProductController extends Controller
     {
         //
         // Eager load relationships
-        // $product->load('brand', 'unit', 'category');
+         $product->load('brand', 'unit', 'category');
         //ClassObject->property
         //dd($product);
         //show.blade.php

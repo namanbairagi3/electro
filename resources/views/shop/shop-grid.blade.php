@@ -1,4 +1,3 @@
-
 @extends('layouts.common')
 
 @section('common_content')
@@ -70,7 +69,7 @@
                         <h4 class="font-size-14 mb-3 font-weight-bold">Brands</h4>
 
                         <!-- Checkboxes -->
-
+                        
                         @foreach($brandProductCounts as $brandProductCount)
                         <div class="form-group d-flex align-items-center justify-content-between mb-2 pb-1">
                             <div class="custom-control custom-checkbox">
@@ -81,8 +80,8 @@
                             </div>
                         </div>
                         @endforeach
-
-
+                        
+                        
                         <!-- End Checkboxes -->
 
                         <!-- View More - Collapse -->
@@ -428,22 +427,21 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade pt-2 show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">
                         <ul class="row list-unstyled products-group no-gutters">
-
                             @foreach($products as $product)
                             <li class="col-6 col-md-3 col-wd-2gdot4 product-item">
                                 <div class="product-item__outer h-100">
                                     <div class="product-item__inner px-xl-4 p-3">
                                         <div class="product-item__body pb-xl-2">
                                             <div class="mb-2">
-                                                <a href="/" target="_blank" class="font-size-12 text-gray-5"> {{$product->category_name}}</a>
+                                                <a href="/{{$product->slug}}" target="_blank" class="font-size-12 text-gray-5"> {{$product->category_name}}</a>
                                             </div>
                                             <h5 class="mb-1 product-item__title">
-                                                <a href="/" target="_blank" class="text-blue font-weight-bold">
+                                                <a href="/{{$product->slug}}" target="_blank" class="text-blue font-weight-bold">
                                                     {{$product->product_name}}
                                                 </a>
                                             </h5>
                                             <div class="mb-2">
-                                                <a href="/" target="_blank" class="d-block text-center">
+                                                <a href="/{{$product->slug}}" target="_blank" class="d-block text-center">
                                                     <img class="img-fluid" src="{{$product->prod_thumbnail_img}}" alt="Image Description">
                                                 </a>
                                             </div>
@@ -454,8 +452,8 @@
                                             @endphp
                                             <div class="flex-center-between mb-1">
                                                 <div class="prodcut-price">
-                                                    <div class="text-gray-100" style="text-decoration: line-through;color:red">₹{{$product->mrp}}</div>
-                                                    <div class="text-gray-100" style="color:green">₹{{$product->sell_price}}</div>
+                                                    <div class="text-gray-100" style="text-decoration: line-through;color:red">${{$product->mrp}}</div>
+                                                    <div class="text-gray-100" style="color:green">${{$product->sell_price}}</div>
                                                     <div class="text-gray-100">
                                                         Discount: {{ number_format($discountPercentage, 2) }}%
                                                     </div>
@@ -475,7 +473,6 @@
                                 </div>
                             </li>
                             @endforeach
-
                         </ul>
                     </div>
                     <div class="tab-pane fade pt-2" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
