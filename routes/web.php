@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ProductFilterController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\CategoryController;
@@ -22,6 +23,8 @@ use App\Models\Brand;
 Route::get('/', [HomeController::class,'home'])->name('homeroute');
 //Route forproduct slugs
 Route::get('/{slug}', [HomeController::class,'show'])->name('home.show');
+
+Route::get('/chat/chat', [ChatController::class, 'chat']);
 
 Route::post('/login',[AuthController::class,'login'])->name('login');
 
@@ -102,10 +105,6 @@ Route::prefix('/shop')->group(function () {
     });
     Route::get('/wishlist',function(){
         return view('shop/wishlist'); //wishlist.blade.php
-    });
-    //Extra routes
-    Route::get('/chat',function(){
-        return view('shop/chat'); //chat.blade.php
     });
 });
 
