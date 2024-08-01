@@ -16,13 +16,35 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Abhishek',
-            'surname' => 'Bairagi',
-            'email' => 'admin1@gmail.com',
-            'password' => 'admin1@gmail.com',
-            'role' => 'admin',
-
+        User::insert([
+            [
+                'name' => 'Abhishek',
+                'surname' => 'Bairagi',
+                'email' => 'admin1@gmail.com',
+                'password' => 'admin1@gmail.com',
+                'role' => 'admin',
+            ],
+            [
+                'name' => 'a1',
+                'surname' => 'a1',
+                'email' => 'customer1@gmail.com',
+                'password' => 'customer1@gmail.com',
+                'role' => 'customer',
+            ],
+            [
+                'name' => 'a2',
+                'surname' => 'a2',
+                'email' => 'customer2@gmail.com',
+                'password' => 'customer2@gmail.com',
+                'role' => 'customer',
+            ],
+            [
+                'name' => 'a3',
+                'surname' => 'a3',
+                'email' => 'customer3@gmail.com',
+                'password' => 'customer3@gmail.com',
+                'role' => 'customer',
+            ],
         ]);
 
         // Create system info records using createMany

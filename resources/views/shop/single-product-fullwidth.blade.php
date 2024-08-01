@@ -40,7 +40,7 @@
                         <div class="js-slide">
                             <img class="img-fluid" src="/assets/img/720X660/img3.jpg" alt="Image Description">
                         </div>
-                        <div class="js-slide">
+                            <div class="js-slide">
                             <img class="img-fluid" src="/assets/img/720X660/img4.jpg" alt="Image Description">
                         </div>
                         <div class="js-slide">
@@ -75,7 +75,7 @@
                         <div class="border-bottom mb-3 pb-md-1 pb-3">
                             <a href="#" class="font-size-12 text-gray-5 mb-2 d-inline-block">{{$product->category_name}}</a>
                             <h2 class="font-size-25 text-lh-1dot2">{{$product->product_name}}</h2>
-                            {{-- <div class="mb-2">
+                            <div class="mb-2">
                                 <a class="d-inline-flex align-items-center small font-size-15 text-lh-1" href="#">
                                 
                                     <div class="text-warning mr-2">
@@ -91,7 +91,7 @@
 
                                     <span class="text-secondary font-size-13">({{$customerReviewCount}} customer reviews)</span>
                                 </a>
-                            </div> --}}
+                            </div>
                             <div class="d-md-flex">
                                 <a href="#" class="max-width-150 ml-n2 mb-2 mb-md-0">Brand:- {{$product->brand_name}} <img class="img-fluid" src="{{$product->brand_logo}}" alt="Image Description"></a>
                                 <a href="#" class="max-width-150 ml-n2 mb-2 mb-md-0">Seller:- {{$product->seller_name}}</a>
@@ -114,8 +114,8 @@
                         <p><strong>SKU</strong>: {{$product->sku}}</p>
                         <div class="mb-4">
                             <div class="d-flex align-items-baseline">
-                                <ins class="font-size-36 text-decoration-none">${{$product->sell_price}}</ins>
-                                <del class="font-size-20 ml-2 text-gray-6">${{$product->mrp}}</del>
+                                <ins class="font-size-36 text-decoration-none" style="color:green">₹{{$product->sell_price}}</ins>
+                                <del class="font-size-20 " style="text-decoration: line-through;color:red">₹{{$product->mrp}}</del>
                             </div>
                         </div>
                         <div class="border-top border-bottom py-3 mb-4">

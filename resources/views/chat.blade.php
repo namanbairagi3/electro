@@ -6,7 +6,7 @@
             <div class="card-header bg-light text-left">
                 <img src="{{$appData['app_shortcut_icon_url']}}"/>
             </div>
-            <div class="card-body" style="min-height:350px;">
+            <div class="card-body" style="min-height:280px;">
                 <div id="chat-container" class="text-left">
                     <!-- Chat messages will appear here -->
                 </div>

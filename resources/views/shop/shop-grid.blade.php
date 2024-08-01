@@ -452,8 +452,8 @@
                                             @endphp
                                             <div class="flex-center-between mb-1">
                                                 <div class="prodcut-price">
-                                                    <div class="text-gray-100" style="text-decoration: line-through;color:red">${{$product->mrp}}</div>
-                                                    <div class="text-gray-100" style="color:green">${{$product->sell_price}}</div>
+                                                    <div class="text-gray-100" style="text-decoration: line-through;color:red">₹{{$product->mrp}}</div>
+                                                    <div class="text-gray-100" style="color:green">₹{{$product->sell_price}}</div>
                                                     <div class="text-gray-100">
                                                         Discount: {{ number_format($discountPercentage, 2) }}%
                                                     </div>
