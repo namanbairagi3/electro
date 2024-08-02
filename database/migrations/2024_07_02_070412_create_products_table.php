@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('brand_id')->nullable();
             $table->string('unit_id')->nullable();
             $table->string('category_id')->nullable();
+            $table->string('seller_id')->nullable();
             $table->string('mrp')->nullable();
             $table->string('sell_price')->nullable();
             $table->string('qty_available')->nullable();

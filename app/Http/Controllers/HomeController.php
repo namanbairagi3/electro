@@ -23,8 +23,8 @@ class HomeController extends Controller
         $product = Product::where('slug',$slug)
         ->join('categories','products.category_id','=','categories.category_id')
         ->join('brands','products.brand_id','=','brands.id')
-        // ->join('sellers','products.seller_id','=','sellers.id')
-        ->select('products.*', 'categories.category_name','brands.brand_name','brands.brand_logo') // Selecting product fields and category name
+        ->join('sellers','products.seller_id','=','sellers.id')
+        ->select('products.*', 'categories.category_name','brands.brand_name','brands.brand_logo','sellers.seller_name') // Selecting product fields and category name
         ->first();
         // dd($product->id);
         // Join with the reviews table and count the number of reviews for this product

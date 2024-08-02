@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('reviews', function (Blueprint $table) {
-            //
-            $table->dropForeign(['product_id']); // Remove the foreign key constraint
-        });
+        /* Schema::table('reviews', function (Blueprint $table) {
+            // Drop the correct foreign key
+            $table->dropForeign(['customer_id']); // or use $table->dropForeign('reviews_product_id_foreign') if you have the exact name
+        }); */
     }
 
     /**
@@ -23,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('reviews', function (Blueprint $table) {
-            //
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade'); // Add it back in case of rollback
+            // Add the foreign key back in case of rollback
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 };
