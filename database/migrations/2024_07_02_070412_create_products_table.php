@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('qty_available')->nullable();
             $table->string('prod_thumbnail_img')->nullable();
             $table->string('prod_main_img')->nullable();
+            $table->text('prod_gallery_imgs')->nullable();
             $table->timestamps();
         });
     }

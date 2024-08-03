@@ -47,7 +47,7 @@
                             <img class="img-fluid" src="/assets/img/720X660/img5.jpg" alt="Image Description">
                         </div>
                     </div>
-                    {{-- {{$product->prod_gallery_imgs}} --}}
+                    {{$product->prod_gallery_imgs}}
                     <div id="sliderSyncingThumb" class="js-slick-carousel u-slick u-slick--slider-syncing u-slick--slider-syncing-size u-slick--gutters-1 u-slick--transform-off"
                         data-infinite="true"
                         data-slides-show="5"

@@ -29,7 +29,7 @@ class HomeController extends Controller
         // dd($product->id);
         // Join with the reviews table and count the number of reviews for this product
         $customerReviewCount = DB::table('reviews')
-        ->where('product_id', 1)
+        ->where('product_id', $product->id)
         ->count();
 
         $averageRating = DB::table('reviews')
