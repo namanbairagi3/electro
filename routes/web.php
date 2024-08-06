@@ -124,11 +124,8 @@ Route::get('/terms-and-conditions', function () {
 /* Backend/Admin Routes */
 
 Route::prefix('admin')->middleware(AdminAuth::class)->group(function () { // /admin/login
-    Route::get('/', [SystemInfoController::class,'login'])->withoutMiddleware([AdminAuth::class]);
-    Route::get('/login', function () {
-        // Matches The "/admin/login" URL
-        return view('admin.login'); //login.blade.php
-    })->withoutMiddleware([AdminAuth::class]);
+    //Route::get('/', [SystemInfoController::class,'login'])->withoutMiddleware([AdminAuth::class]);
+    Route::get('/login', [SystemInfoController::class,'login'] )->withoutMiddleware([AdminAuth::class]);
 
     Route::get('/logout',[AuthController::class,'logout']);
     Route::get('/dashboard', [AuthController::class,'dashboard'])->name('admin_dashboard');
