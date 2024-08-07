@@ -46,8 +46,8 @@ class HomeController extends Controller
          ->select( 'reviews.reviewContent','reviews.rating','reviews.created_at','users.name','users.surname','users.role') 
          ->get();
  
-        //  $product_gallery_images = Product::join('product_gallery_images','products.id','=','product_gallery_images.product_id')
-        //  ->get();    
+         $product_gallery_images = Product::join('product_gallery_images','products.id','=','product_gallery_images.product_id')
+         ->get();    
 
 
         // $rating5 = DB::table('reviews')
@@ -86,7 +86,7 @@ class HomeController extends Controller
 
         return view('shop/single-product-fullwidth',[
                                                         'product'=>$product,
-                                                        // 'product_gallery_images'=>$product_gallery_images,
+                                                        'product_gallery_images'=>$product_gallery_images,
                                                         'customerReviewCount'=>$customerReviewCount,
                                                         'reviews'=>$reviews,
                                                         'averageRating'=>$averageRating,
