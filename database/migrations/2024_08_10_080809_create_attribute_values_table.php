@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attributes', function (Blueprint $table) {
+        Schema::create('attribute_values', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('attribute_id');
+            $table->string('value');
             $table->timestamps();
+
+            //Combined Constraint on two column 'attribute_id', 'value'
+            $table->unique(['attribute_id', 'value'], 'unique_attribute_value');
         });
     }
 
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attributes');
+        Schema::dropIfExists('attribute_values');
     }
 };

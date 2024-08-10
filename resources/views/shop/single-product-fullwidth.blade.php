@@ -559,6 +559,7 @@
                                 <!-- End Form -->
                             </div>
                         </div>
+
                         @foreach ($reviews as $review)    
                         <!-- Review -->
                         <div class="border-bottom border-color-1 pb-4 mb-4">
@@ -586,6 +587,7 @@
                             <!-- End Reviewer -->
                         </div>
                         @endforeach
+                        
                 </div>
             </div>
             <!-- End Tab Content -->
