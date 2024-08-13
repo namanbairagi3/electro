@@ -848,8 +848,50 @@
                 $.HSCore.components.HSSelectPicker.init('.js-select');
             });
         </script>
+
+        {{-- <script>
+            $(document).ready(function() {
+                @foreach($product_gallery_images as $index => $product_gallery_image)
+                    $('#zoom_{{$index}}').elevateZoom(); // Initialize the zoom functionality on each unique ID
+                @endforeach
+            });
+        </script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <script>
-            
+            document.addEventListener('DOMContentLoaded', function () {
+                @if (session('success'))
+                    Swal.fire({
+                        icon: 'success',
+                        title: '{{ session('success') }}',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer);
+                            toast.addEventListener('mouseleave', Swal.resumeTimer);
+                        }
+                    });
+                @elseif (session('error'))
+                    Swal.fire({
+                        icon: 'error',
+                        title: '{{ session('error') }}',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer);
+                            toast.addEventListener('mouseleave', Swal.resumeTimer);
+                        }
+                    });
+                @endif
+            });
         </script>
+
+
     </body>
 </html>

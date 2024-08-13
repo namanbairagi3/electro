@@ -390,7 +390,7 @@
                         </ul>
                     </div>
                     <div class="d-flex">
-                        <form method="get">
+                        <form method="">
                             <!-- Select -->
                             <select class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
                                 data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0">
