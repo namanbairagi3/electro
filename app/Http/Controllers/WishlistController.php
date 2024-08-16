@@ -56,27 +56,24 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
+        //
         //dd($request->all());
         //dd('store');
         $data = $request->only('product_id');
         $data['customer_id']=Auth::id();
         //dd($data);
-        
-        // Check if the product is already in the user's wishlist
-        $existingWishlistItem = Wishlist::where('customer_id', $data['customer_id'])
-                                        ->where('product_id', $data['product_id'])
-                                        ->first();
+        //We have check if the product is already added to the store
+        // Check if the product is already added to the wishlist
+        $exists = Wishlist::where('product_id', $data['product_id'])
+        ->where('customer_id', $data['customer_id'])
+        ->exists();
 
-        if ($existingWishlistItem) {
-            return redirect()->back()->with('error', 'This product is already in your wishlist');
-            }
-
-        try {
-            Wishlist::create($data);
-            return redirect()->back()->with('success', 'Product added to wishlist successfully');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to add product to wishlist');
+        if ($exists) {
+            return back()->with('info', 'Product is already in your wishlist.');
         }
+
+        Wishlist::create($data);
+        return back()->with('success','Product added to wishlist successfully');
 
     }
 

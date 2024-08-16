@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string("customer_id");
             $table->string("product_id");
             $table->timestamps();
+
+            //Combined Constraint on two column 'attribute_id', 'value'
+            $table->unique(['customer_id', 'product_id'], 'unique_wishlist_value');
         });
     }
 
