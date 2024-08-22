@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use App\View\Composers\CartComposer;
 use App\Models\SystemInfo;
 
 

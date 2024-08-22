@@ -1073,7 +1073,7 @@
                                     <!-- Select -->
                                     <select class="js-select selectpicker dropdown-select custom-search-categories-select"
                                         data-style="btn height-40 text-gray-60 font-weight-normal border-0 rounded-0 bg-white px-5 py-2">
-                                        <option value="one" selected>All Categories</option>
+                                        <option value="one" selected>All Categories </option>
                                         <option value="two">Two</option>
                                         <option value="three">Three</option>
                                         <option value="four">Four</option>

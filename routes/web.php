@@ -14,7 +14,10 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\SystemInfoController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\CouponController;
+
 use App\Http\Middleware\AdminAuth;
+
 
 
 use App\Models\Brand;
@@ -33,6 +36,10 @@ Route::prefix('/shop')->group(function () {
     Route::get('/shop-grid', [ProductFilterController::class, 'filter'])->name('shop-grid');
 
     Route::resource('cart', CartController::class);
+
+    Route::resource('coupons',CouponController::class);
+
+    Route::post('coupons/apply',[CouponController::class, 'applyCoupon'])->name('coupons.apply');
     
     Route::get('/checkout',function(){
         return view('shop/checkout'); //checkout.blade.php
