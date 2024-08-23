@@ -95,6 +95,16 @@
                                     <div class="pt-md-3">
                                         <div class="d-block d-md-flex flex-center-between">
                                             <div class="mb-3 mb-md-0 w-xl-40">
+
+                                                {{-- <form method="POST" action="{{route('coupons.apply')}}">
+                                                    @csrf
+                                                    @method('POST')
+                                                    <input type="text" class="form-control" name="coupon_code" id="coupon_code" placeholder="Coupon code" aria-label="Coupon code" aria-describedby="subscribeButtonExample2" required="">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-block btn-dark px-4" type="submit" id="subscribeButtonExample2"><i class="fas fa-tags d-md-none"></i><span class="d-none d-md-inline">Apply coupon</span></button>
+                                                    </div>
+                                                </form> --}}
+
                                                 <!-- Apply coupon Form -->
                                                 <form method="POST" action="{{ route('coupons.apply') }}">
                                                     @csrf

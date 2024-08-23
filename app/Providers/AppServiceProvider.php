@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
+use App\View\Composers\CartComposer;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\View\Composers\CartComposer;
-use App\Models\SystemInfo;
 
+use App\Models\SystemInfo;
+use App\Models\Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -45,7 +47,8 @@ class AppServiceProvider extends ServiceProvider
         $support = SystemInfo::where('meta_name', 'support')->first()->meta_value;
         $email = SystemInfo::where('meta_name', 'email')->first()->meta_value;
 
-        $categories = Category::whereNotNull('rank')->orderBy('rank', 'asc')->get();
+        // $categories = Category::whereNotNull('rank')->orderBy('rank', 'asc')->get();
+        
         $data = [
             'app_name' =>  "$app_name",
             'app_description' =>  "$app_description",
@@ -65,7 +68,13 @@ class AppServiceProvider extends ServiceProvider
             //Support & email
             'support' => "$support",
             'email' => "$email",
-            'categories'=>$categories
+            // 'categories'=>$categories 
+
+            // 'cart_info' => [
+            //     'cart_count' => 20,//$cartCount,
+            //     'cart_total' => 2000,//$grandTotal,
+            // ],
+
         ];
         //ClassName::method(aa1,aa2);
         View::share('appData', $data);
