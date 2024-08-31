@@ -48,6 +48,12 @@ class AppServiceProvider extends ServiceProvider
         $email = SystemInfo::where('meta_name', 'email')->first()->meta_value;
 
         // $categories = Category::whereNotNull('rank')->orderBy('rank', 'asc')->get();
+
+        $grandTotal = 0;
+
+        // foreach ($cartItems as $item) {
+        //     $grandTotal += $item->sell_price * $item->qty;
+        // }
         
         $data = [
             'app_name' =>  "$app_name",
@@ -78,5 +84,6 @@ class AppServiceProvider extends ServiceProvider
         ];
         //ClassName::method(aa1,aa2);
         View::share('appData', $data);
+        View::share('grandTotal', $grandTotal);
     }
 }

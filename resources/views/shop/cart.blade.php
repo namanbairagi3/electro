@@ -459,7 +459,7 @@
                                 </tr>
                                 <tr class="order-total">
                                     <th>Total</th>
-                                    <td data-title="Total"><strong><span class="amount">${{$grandTotal}}</span></strong></td>
+                                    <td data-title="Total"><strong><span class="amount">z</span></strong></td>
                                 </tr>
                             </tbody>
                         </table>
