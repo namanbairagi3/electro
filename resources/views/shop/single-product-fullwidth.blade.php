@@ -180,6 +180,7 @@
                             <form action="{{route('cart.store')}}" method="POST" >
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{$product->id}}" />
+                        <div class="d-md-flex align-items-end mb-3">
                             <div class="max-width-150 mb-4 mb-md-0">
                                 <h6 class="font-size-14">Quantity</h6>
                                 <!-- Quantity -->
